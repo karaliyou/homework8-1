@@ -9,5 +9,15 @@ https://www.virtualbox.org/wiki/Downloads
 4. Следуя указаниям мастера установки устанавливаем систему и проводим её предварительную настройку
 5. Обновляем приложения системы
 sudo apt update
-6, Устанавливаем lxc
+6. Устанавливаем lxc
 apt install lxc lxctl
+7. Настраиваем запуск, проверяем активность
+systemctl enable lxc
+systemctl is-enabled lxc
+8.Создаем контейнер
+lxc-create -n container0 -t download
+ubuntu
+bionic
+amd64
+9. Проверяем созданный контейнер
+lxc-info -n container0
